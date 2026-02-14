@@ -17,7 +17,7 @@ export default defineConfig({
   // Re-enable when VitePress 2 ships single-git-call optimization.
   lastUpdated: false,
   // Limit concurrent page rendering (default: 64). Lower = less peak memory.
-  buildConcurrency: 8,
+  buildConcurrency: 2,
   // Extract page metadata into a shared chunk instead of inlining in each HTML.
   metaChunk: true,
   vite: {
