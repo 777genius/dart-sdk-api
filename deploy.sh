@@ -42,8 +42,8 @@ if [ "$do_build" = true ]; then
   echo "==> Installing dependencies..."
   npm install
 
-  echo "==> Building VitePress (max heap 8GB)..."
-  NODE_OPTIONS="--max-old-space-size=8192" npx vitepress build
+  echo "==> Building VitePress (max heap 24GB)..."
+  NODE_OPTIONS="--max-old-space-size=24576" npx vitepress build
   echo "==> Build complete. Size: $(du -sh .vitepress/dist | cut -f1)"
 fi
 
@@ -51,6 +51,9 @@ fi
 if [ "$do_deploy" = true ]; then
   echo "==> Deploying to GitHub Pages..."
   cd .vitepress/dist
+
+  # Disable Jekyll processing on GitHub Pages
+  touch .nojekyll
 
   git init
   git checkout -b gh-pages
