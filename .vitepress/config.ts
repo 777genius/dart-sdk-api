@@ -3,31 +3,21 @@ import { apiSidebar } from './generated/api-sidebar'
 import { guideSidebar } from './generated/guide-sidebar'
 import { dartpadPlugin } from './theme/plugins/dartpad'
 import { apiLinkerPlugin } from './theme/plugins/api-linker'
-// llmstxt disabled for large SDK docs builds (OOM with 2760+ pages)
-// import llmstxt, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
+// import llmstxt from 'vitepress-plugin-llms'
 
 export default defineConfig({
-  title: 'Dart SDK API',
-  description: 'API documentation for Dart SDK',
   base: '/dart-sdk-api/',
+  title: 'Dart API',
+  description: 'API documentation for Dart',
+  srcExclude: ['CLAUDE.md', 'AGENTS.md'],
   // Cross-references to SDK types (dart:core, dart:collection) produce
   // dead links since we only generate docs for this package.
   ignoreDeadLinks: true,
-  // Disabled for build perf: 1800+ individual git log calls cause OOM.
-  // Re-enable when VitePress 2 ships single-git-call optimization.
-  lastUpdated: false,
-  // Limit concurrent page rendering (default: 64). Lower = less peak memory.
-  buildConcurrency: 2,
-  // Extract page metadata into a shared chunk instead of inlining in each HTML.
-  metaChunk: true,
-  vite: {
-    build: {
-      sourcemap: false,
-      rollupOptions: {
-        cache: false,
-      },
-    },
-  },
+  // Show "Last updated" timestamps on pages (requires git history).
+  lastUpdated: true,
+  // vite: {
+  //   plugins: [llmstxt()],
+  // },
   markdown: {
     config: (md) => {
       md.use(dartpadPlugin)
