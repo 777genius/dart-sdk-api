@@ -25,6 +25,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    logo: '/dart-logo.svg',
     // "On this page" outline: show h2–h4 with nested tree structure.
     outline: { level: [2, 4] },
     // Full-text search powered by MiniSearch (built into VitePress).

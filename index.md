@@ -18,22 +18,34 @@ hero:
       text: dart.dev
       link: https://dart.dev
 features:
-  - icon: 🔍
-    title: Full-Text Search
-    details: Instantly find any class, method, or property across the entire Dart SDK with built-in local search.
-  - icon: 🌙
-    title: Dark Mode
-    details: Switch between light and dark themes for comfortable reading in any environment.
-  - icon: 🎯
-    title: Interactive DartPad
-    details: Run and edit code examples directly in the browser with embedded DartPad playgrounds.
-  - icon: 📑
-    title: Collapsible Outline
-    details: Navigate large API containers with collapsible "On this page" outline sections.
-  - icon: 📋
-    title: Copy Button
-    details: One-click copy on all code blocks — signatures, examples, and declarations.
-  - icon: 🔗
-    title: Cross-Reference Links
-    details: Type references are automatically linked across libraries for seamless navigation.
+  - icon: 🧩
+    title: dart:core
+    details: Fundamental types — num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration, and more.
+    link: /api/Dart_dart-core/
+    linkText: Browse dart:core
+  - icon: ⏳
+    title: dart:async
+    details: Asynchronous programming — Future, Stream, Completer, Timer, Zone, and scheduleMicrotask.
+    link: /api/Dart_dart-async/
+    linkText: Browse dart:async
+  - icon: 📦
+    title: dart:collection
+    details: Specialized collections — HashMap, LinkedList, Queue, SplayTreeMap, UnmodifiableListView.
+    link: /api/Dart_dart-collection/
+    linkText: Browse dart:collection
+  - icon: 🔄
+    title: dart:convert
+    details: Encoders and decoders — JSON, UTF-8, Base64, Latin-1, and custom codecs.
+    link: /api/Dart_dart-convert/
+    linkText: Browse dart:convert
+  - icon: 🗂️
+    title: dart:io
+    details: I/O for servers and CLI — File, Directory, HttpClient, Socket, Process, Platform.
+    link: /api/Dart_dart-io/
+    linkText: Browse dart:io
+  - icon: 🔢
+    title: dart:math
+    details: Mathematical constants and functions — Random, Point, Rectangle, min, max, sqrt, sin, cos.
+    link: /api/Dart_dart-math/
+    linkText: Browse dart:math
 ---
