@@ -14,6 +14,42 @@ The libraries fall into three platform categories:
 - **VM libraries** — server-side and CLI only (not available when compiled to JavaScript)
 - **Web libraries** — browser-only (compiled to JavaScript via `dart compile js` or `webdev`)
 
+## Try It Now
+
+Run this example right here in the browser — click **Run** to see Dart in action:
+
+```dartpad
+import 'dart:math';
+
+void main() {
+  // Collections
+  final languages = ['Dart', 'Kotlin', 'Swift', 'Rust', 'Go'];
+  print('Languages: ${languages.join(", ")}');
+
+  // Map & where
+  final lengths = {for (final lang in languages) lang: lang.length};
+  final short = lengths.entries.where((e) => e.value <= 4);
+  print('Short names: ${short.map((e) => e.key).join(", ")}');
+
+  // DateTime & Duration
+  final now = DateTime.now();
+  final future = now.add(Duration(days: 365));
+  print('Today: ${now.toIso8601String().split("T").first}');
+  print('In a year: ${future.toIso8601String().split("T").first}');
+
+  // Random
+  final rng = Random();
+  final dice = List.generate(5, (_) => rng.nextInt(6) + 1);
+  print('Dice rolls: $dice (sum: ${dice.reduce((a, b) => a + b)})');
+
+  // Pattern matching (Dart 3)
+  final json = {'name': 'Dart', 'version': 3.5};
+  if (json case {'name': String name, 'version': num ver}) {
+    print('$name version $ver');
+  }
+}
+```
+
 ## Core Libraries
 
 These libraries are available on all Dart platforms (VM, web, Flutter).
