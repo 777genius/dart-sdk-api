@@ -36,11 +36,18 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'API Reference', link: '/api/' },
+      {
+        text: 'GitHub',
+        items: [
+          { text: 'This Project', link: 'https://github.com/777genius/dart-sdk-api' },
+          { text: 'Dart SDK', link: 'https://github.com/dart-lang/sdk' },
+        ],
+      },
     ],
     sidebar: {
       ...apiSidebar,
       ...guideSidebar,
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/dart-lang/sdk' }],
+    socialLinks: [],
   },
 })

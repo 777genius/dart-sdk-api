@@ -15,8 +15,8 @@ hero:
       text: Guide
       link: /guide/
     - theme: alt
-      text: dart.dev
-      link: https://dart.dev
+      text: GitHub
+      link: https://github.com/777genius/dart-sdk-api
 features:
   - icon: 🧩
     title: dart:core
