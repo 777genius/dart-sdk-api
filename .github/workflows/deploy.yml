@@ -28,6 +28,11 @@ jobs:
 
       - name: Generate API docs
         run: |
+          # Create empty header/footer files expected by --sdk-docs
+          sudo mkdir -p /opt/hostedtoolcache/tools/bots
+          sudo touch /opt/hostedtoolcache/tools/bots/dartdoc_header.html
+          sudo touch /opt/hostedtoolcache/tools/bots/dartdoc_footer.html
+
           git clone https://github.com/777genius/dartdoc_vitepress.git /tmp/dartdoc-vitepress
           cd /tmp/dartdoc-vitepress && dart pub get
           dart run /tmp/dartdoc-vitepress/bin/dartdoc_vitepress.dart \
