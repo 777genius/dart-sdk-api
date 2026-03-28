@@ -24,7 +24,7 @@ jobs:
         run: |
           sudo swapoff /swapfile || true
           sudo rm -f /swapfile
-          sudo fallocate -l 12G /swapfile
+          sudo fallocate -l 16G /swapfile
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
           sudo swapon /swapfile
@@ -54,7 +54,7 @@ jobs:
 
       - name: Build VitePress
         env:
-          NODE_OPTIONS: "--max-old-space-size=12288"
+          NODE_OPTIONS: "--max-old-space-size=18432"
         run: npx vitepress build
 
       - uses: actions/configure-pages@v4
