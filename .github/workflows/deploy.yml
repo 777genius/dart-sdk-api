@@ -16,19 +16,27 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest-16core
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Increase swap to 12GB
+      - name: Free disk space and increase swap
         run: |
+          # Remove large preinstalled software to free RAM and disk
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force || true
+
+          # Increase swap to 20GB
           sudo swapoff /swapfile || true
           sudo rm -f /swapfile
-          sudo fallocate -l 16G /swapfile
+          sudo fallocate -l 20G /swapfile
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
           sudo swapon /swapfile
+          echo "=== Memory ==="
           free -h
+          echo "=== Disk ==="
+          df -h /
 
       - uses: dart-lang/setup-dart@v1
 
@@ -54,7 +62,7 @@ jobs:
 
       - name: Build VitePress
         env:
-          NODE_OPTIONS: "--max-old-space-size=18432"
+          NODE_OPTIONS: "--max-old-space-size=24576"
         run: npx vitepress build
 
       - uses: actions/configure-pages@v4
