@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate API docs
         run: |
-          git clone https://github.com/777genius/dartdoc-vitepress.git /tmp/dartdoc-vitepress
+          git clone https://github.com/777genius/dartdoc_vitepress.git /tmp/dartdoc-vitepress
           cd /tmp/dartdoc-vitepress && dart pub get
           dart run /tmp/dartdoc-vitepress/bin/dartdoc_vitepress.dart \
             --sdk-docs --format vitepress --output "$GITHUB_WORKSPACE"
