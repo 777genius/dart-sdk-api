@@ -20,6 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create swap file
+        run: |
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+
       - uses: dart-lang/setup-dart@v1
 
       - uses: actions/setup-node@v4
@@ -43,7 +50,7 @@ jobs:
 
       - name: Build VitePress
         env:
-          NODE_OPTIONS: "--max-old-space-size=8192"
+          NODE_OPTIONS: "--max-old-space-size=12288"
         run: npx vitepress build
 
       - uses: actions/configure-pages@v4
