@@ -20,7 +20,7 @@ These libraries are available on all Dart platforms (VM, web, Flutter).
 
 ### dart:core — The Foundation
 
-[Browse dart:core](/api/Dart_dart-core/)
+[Browse dart:core](/api/dart-core/)
 
 The most fundamental library in the SDK. It provides the types you use in nearly every line of Dart code: `int`, `double`, `String`, `bool`, `List`, `Map`, `Set`, `Iterable`, `DateTime`, `Duration`, `RegExp`, `Uri`, and the core error/exception hierarchy.
 
@@ -45,7 +45,7 @@ final uri = Uri.parse('https://dart.dev/guides');
 
 ### dart:async — Futures and Streams
 
-[Browse dart:async](/api/Dart_dart-async/)
+[Browse dart:async](/api/dart-async/)
 
 The asynchronous programming backbone. Provides `Future` for single async results and `Stream` for sequences of async events. Nearly every I/O operation in Dart returns a `Future` or `Stream`.
 
@@ -91,7 +91,7 @@ A **single-subscription** stream (default) allows one listener. A **broadcast** 
 
 ### dart:collection — Specialized Collections
 
-[Browse dart:collection](/api/Dart_dart-collection/)
+[Browse dart:collection](/api/dart-collection/)
 
 When `List`, `Map`, and `Set` from `dart:core` aren't enough, `dart:collection` provides specialized implementations with different performance characteristics.
 
@@ -126,7 +126,7 @@ final public = UnmodifiableListView(internal);
 
 ### dart:convert — Encoders and Decoders
 
-[Browse dart:convert](/api/Dart_dart-convert/)
+[Browse dart:convert](/api/dart-convert/)
 
 A codec-based encoding/decoding framework. The library provides ready-made codecs for JSON, UTF-8, Base64, Latin-1, and ASCII, plus a `Codec`/`Converter` base for building custom transformers.
 
@@ -161,7 +161,7 @@ final bytes = fused.encode({'key': 'value'});
 
 ### dart:math — Math and Random
 
-[Browse dart:math](/api/Dart_dart-math/)
+[Browse dart:math](/api/dart-math/)
 
 Mathematical constants, functions, random number generation, and 2D geometry primitives.
 
@@ -195,7 +195,7 @@ print(rect.containsPoint(Point(10, 10))); // true
 
 ### dart:typed_data — Binary Data
 
-[Browse dart:typed_data](/api/Dart_dart-typed_data/)
+[Browse dart:typed_data](/api/dart-typed_data/)
 
 Fixed-size, typed lists for efficient binary data processing. Essential for file formats, network protocols, image processing, and interop with native code.
 
@@ -232,7 +232,7 @@ Available only when running on the Dart VM or in Flutter (not compiled to JavaSc
 
 ### dart:io — Files, HTTP, and Processes
 
-[Browse dart:io](/api/Dart_dart-io/)
+[Browse dart:io](/api/dart-io/)
 
 The workhorse library for server-side Dart. Covers file system access, HTTP clients and servers, TCP/UDP sockets, WebSockets, processes, and platform information.
 
@@ -272,7 +272,7 @@ print(result.stdout);
 
 ### dart:isolate — Concurrency
 
-[Browse dart:isolate](/api/Dart_dart-isolate/)
+[Browse dart:isolate](/api/dart-isolate/)
 
 Dart's concurrency model is based on **isolates** — independent workers with their own memory heap. Isolates communicate exclusively via message passing (`SendPort` / `ReceivePort`), which prevents shared-state bugs like data races.
 
@@ -302,7 +302,7 @@ Since Dart 2.19, `Isolate.run()` is the simplest way to offload CPU-intensive wo
 
 ### dart:ffi — Native Interop
 
-[Browse dart:ffi](/api/Dart_dart-ffi/)
+[Browse dart:ffi](/api/dart-ffi/)
 
 Call C functions and access native memory directly from Dart. Used by packages like `sqlite3`, `realm`, and platform-specific integrations.
 
