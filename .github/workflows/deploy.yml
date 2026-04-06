@@ -58,6 +58,27 @@ jobs:
           dart pub global run dartdoc_modern \
             --sdk-docs --format jaspr --output docs-site
 
+      # --sdk-docs doesn't generate guides, but app.dart imports guide_sidebar.dart.
+      # Create an empty stub so jaspr build compiles.
+      - name: Create guide sidebar stub
+        run: |
+          mkdir -p docs-site/lib/generated
+          cat > docs-site/lib/generated/guide_sidebar.dart << 'DART'
+          class SidebarItem {
+            final String text;
+            final String? link;
+            final bool collapsed;
+            final List<SidebarItem> items;
+            const SidebarItem({required this.text, this.link, this.collapsed = false, this.items = const <SidebarItem>[]});
+          }
+          class SidebarGroup {
+            final String? title;
+            final List<SidebarItem> items;
+            const SidebarGroup({this.title, required this.items});
+          }
+          const List<SidebarGroup> guideSidebarGroups = [];
+          DART
+
       # dartdoc_modern generates web/guide/<name>.html with <meta http-equiv="refresh">.
       # On GitHub Pages these .html files take priority over Jaspr SSR
       # guide/<name>/index.html, causing an infinite redirect loop.
