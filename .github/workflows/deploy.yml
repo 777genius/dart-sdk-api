@@ -47,9 +47,12 @@ jobs:
       - name: Generate API docs
         run: |
           # Create empty header/footer files expected by --sdk-docs
-          sudo mkdir -p /opt/hostedtoolcache/tools/bots
-          for f in dartdoc_header.html dartdoc_footer.html dartdoc_footer_text.html; do
-            sudo touch /opt/hostedtoolcache/tools/bots/$f
+          # Try both possible locations (Dart SDK standalone and Flutter SDK)
+          for d in /opt/hostedtoolcache/tools/bots "$FLUTTER_ROOT/tools/bots"; do
+            sudo mkdir -p "$d"
+            for f in dartdoc_header.html dartdoc_footer.html dartdoc_footer_text.html; do
+              sudo touch "$d/$f"
+            done
           done
 
           dart pub global activate --source git https://github.com/777genius/dartdoc_modern.git
