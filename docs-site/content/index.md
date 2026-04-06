@@ -20,49 +20,55 @@ features:
   - icon: "\U0001F9E9"
     title: "dart:core"
     details: Fundamental types - num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration, and more.
+    link: /api/dart-core/library
   - icon: "\u231B"
     title: "dart:async"
     details: Asynchronous programming - Future, Stream, Completer, Timer, Zone, and scheduleMicrotask.
+    link: /api/dart-async/library
   - icon: "\U0001F4E6"
     title: "dart:collection"
     details: Specialized collections - HashMap, LinkedList, Queue, SplayTreeMap, UnmodifiableListView.
+    link: /api/dart-collection/library
   - icon: "\U0001F504"
     title: "dart:convert"
     details: Encoders and decoders - JSON, UTF-8, Base64, Latin-1, and custom codecs.
+    link: /api/dart-convert/library
   - icon: "\U0001F5C2\uFE0F"
     title: "dart:io"
     details: I/O for servers and CLI - File, Directory, HttpClient, Socket, Process, Platform.
+    link: /api/dart-io/library
   - icon: "\U0001F522"
     title: "dart:math"
     details: Mathematical constants and functions - Random, Point, Rectangle, min, max, sqrt, sin, cos.
+    link: /api/dart-math/library
 ---
 
 ## Core Libraries
 
-| Library | Description | |
-|---------|-------------|-|
-| [**dart:core**](/api/dart-core/library) | Fundamental types - num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration | [Browse dart:core ->](/api/dart-core/library) |
-| [**dart:async**](/api/dart-async/library) | Asynchronous programming - Future, Stream, Completer, Timer, Zone, scheduleMicrotask | [Browse dart:async ->](/api/dart-async/library) |
-| [**dart:collection**](/api/dart-collection/library) | Specialized collections - HashMap, LinkedList, Queue, SplayTreeMap, UnmodifiableListView | [Browse dart:collection ->](/api/dart-collection/library) |
-| [**dart:convert**](/api/dart-convert/library) | Encoders and decoders - JSON, UTF-8, Base64, Latin-1, and custom codecs | [Browse dart:convert ->](/api/dart-convert/library) |
-| [**dart:math**](/api/dart-math/library) | Mathematical constants and functions - Random, Point, Rectangle, min, max, sqrt, sin, cos | [Browse dart:math ->](/api/dart-math/library) |
-| [**dart:typed_data**](/api/dart-typed_data/library) | Efficient binary data - ByteBuffer, Uint8List, Float64List, Int32List | [Browse dart:typed_data ->](/api/dart-typed_data/library) |
-| [**dart:developer**](/api/dart-developer/library) | Debugging and profiling - Timeline, debugger, ServiceExtension | [Browse dart:developer ->](/api/dart-developer/library) |
+| Library | Description |
+|---------|-------------|
+| [dart:core](/api/dart-core/library) | Fundamental types - num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration |
+| [dart:async](/api/dart-async/library) | Asynchronous programming - Future, Stream, Completer, Timer, Zone, scheduleMicrotask |
+| [dart:collection](/api/dart-collection/library) | Specialized collections - HashMap, LinkedList, Queue, SplayTreeMap, UnmodifiableListView |
+| [dart:convert](/api/dart-convert/library) | Encoders and decoders - JSON, UTF-8, Base64, Latin-1, and custom codecs |
+| [dart:math](/api/dart-math/library) | Mathematical constants and functions - Random, Point, Rectangle, min, max, sqrt, sin, cos |
+| [dart:typed_data](/api/dart-typed_data/library) | Efficient binary data - ByteBuffer, Uint8List, Float64List, Int32List |
+| [dart:developer](/api/dart-developer/library) | Debugging and profiling - Timeline, debugger, ServiceExtension |
 
 ## VM Libraries
 
-| Library | Description | |
-|---------|-------------|-|
-| [**dart:io**](/api/dart-io/library) | File system, HTTP, sockets, processes, platform detection | [Browse dart:io ->](/api/dart-io/library) |
-| [**dart:isolate**](/api/dart-isolate/library) | Concurrent programming with isolated memory spaces | [Browse dart:isolate ->](/api/dart-isolate/library) |
-| [**dart:ffi**](/api/dart-ffi/library) | Foreign function interface for calling C code | [Browse dart:ffi ->](/api/dart-ffi/library) |
+| Library | Description |
+|---------|-------------|
+| [dart:io](/api/dart-io/library) | File system, HTTP, sockets, processes, platform detection |
+| [dart:isolate](/api/dart-isolate/library) | Concurrent programming with isolated memory spaces |
+| [dart:ffi](/api/dart-ffi/library) | Foreign function interface for calling C code |
 
 ## Web Libraries
 
-| Library | Description | |
-|---------|-------------|-|
-| [**dart:js_interop**](/api/dart-js_interop/library) | Type-safe JavaScript interop | [Browse dart:js_interop ->](/api/dart-js_interop/library) |
-| [**dart:html**](/api/dart-html/library) | DOM manipulation, events, HTTP requests (legacy) | [Browse dart:html ->](/api/dart-html/library) |
+| Library | Description |
+|---------|-------------|
+| [dart:js_interop](/api/dart-js_interop/library) | Type-safe JavaScript interop |
+| [dart:html](/api/dart-html/library) | DOM manipulation, events, HTTP requests (legacy) |
 
 ## Quick Example
 
