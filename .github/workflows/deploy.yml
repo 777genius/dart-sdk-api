@@ -52,9 +52,8 @@ jobs:
             sudo touch /opt/hostedtoolcache/tools/bots/$f
           done
 
-          git clone https://github.com/777genius/dartdoc_vitepress.git /tmp/dartdoc-vitepress
-          cd /tmp/dartdoc-vitepress && dart pub get
-          dart run /tmp/dartdoc-vitepress/bin/dartdoc_vitepress.dart \
+          dart pub global activate --source git https://github.com/777genius/dartdoc_modern.git
+          dart pub global run dartdoc_modern \
             --sdk-docs --format vitepress --output "$GITHUB_WORKSPACE"
 
       - name: Install dependencies
