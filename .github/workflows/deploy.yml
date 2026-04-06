@@ -17,16 +17,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
       - name: Free disk space and increase swap
         run: |
-          # Remove large preinstalled software to free RAM and disk
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
           sudo docker image prune --all --force || true
 
-          # Increase swap to 20GB
           sudo swapoff /swapfile || true
           sudo rm -f /swapfile
           sudo fallocate -l 20G /swapfile
@@ -38,11 +37,12 @@ jobs:
           echo "=== Disk ==="
           df -h /
 
-      - uses: dart-lang/setup-dart@v1
-
-      - uses: actions/setup-node@v4
+      - uses: subosito/flutter-action@v2
         with:
-          node-version: 22
+          channel: stable
+
+      - name: Setup Dart pub global path
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
       - name: Generate API docs
         run: |
@@ -54,20 +54,28 @@ jobs:
 
           dart pub global activate --source git https://github.com/777genius/dartdoc_modern.git
           dart pub global run dartdoc_modern \
-            --sdk-docs --format vitepress --output "$GITHUB_WORKSPACE"
+            --sdk-docs --format jaspr --output docs-site
 
-      - name: Install dependencies
-        run: npm install
+      # dartdoc_modern generates web/guide/<name>.html with <meta http-equiv="refresh">.
+      # On GitHub Pages these .html files take priority over Jaspr SSR
+      # guide/<name>/index.html, causing an infinite redirect loop.
+      # DO NOT REMOVE this step - the redirect loop WILL come back.
+      - name: Remove legacy guide redirect files
+        run: find docs-site/web/guide -name '*.html' -delete 2>/dev/null || true
 
-      - name: Build VitePress
-        env:
-          NODE_OPTIONS: "--max-old-space-size=24576"
-        run: npx vitepress build
+      - name: Install docs dependencies
+        working-directory: docs-site
+        run: dart pub get
+
+      - name: Build docs (jaspr)
+        working-directory: docs-site
+        run: dart run jaspr_cli:jaspr build --dart-define DOCS_BASE_PATH=/dart-sdk-api
+        timeout-minutes: 15
 
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist
+          path: docs-site/build/jaspr
 
   deploy:
     environment:
