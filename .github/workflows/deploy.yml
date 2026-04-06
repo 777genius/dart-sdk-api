@@ -54,7 +54,7 @@ jobs:
             done
           done
 
-          dart pub global activate --source git https://github.com/777genius/dartdoc_modern.git
+          dart pub global activate --overwrite --source git https://github.com/777genius/dartdoc_modern.git --git-ref main
           dart pub global run dartdoc_modern \
             --sdk-docs --format jaspr --output docs-site
 
