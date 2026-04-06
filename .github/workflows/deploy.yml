@@ -52,7 +52,7 @@ jobs:
             sudo touch /opt/hostedtoolcache/tools/bots/$f
           done
 
-          dart pub global activate --source git https://github.com/777genius/dartdoc_modern.git
+          dart pub global activate dartdoc_modern
           dart pub global run dartdoc_modern \
             --sdk-docs --format vitepress --output "$GITHUB_WORKSPACE"
 
