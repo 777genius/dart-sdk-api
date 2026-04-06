@@ -58,6 +58,12 @@ jobs:
           dart pub global run dartdoc_modern \
             --sdk-docs --format jaspr --output docs-site
 
+      # Patch features grid to 3 columns (6 library cards fit 3x2)
+      - name: Patch features grid to 3 columns
+        run: |
+          sed -i "s/repeat(4, minmax(0, 1fr))/repeat(3, minmax(0, 1fr))/" \
+            docs-site/lib/layouts/docs_home_layout.dart
+
       # --sdk-docs doesn't generate guides, but app.dart imports guide_sidebar.dart.
       # Create an empty stub so jaspr build compiles.
       - name: Create guide sidebar stub

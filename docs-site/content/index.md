@@ -37,33 +37,32 @@ features:
     details: Mathematical constants and functions - Random, Point, Rectangle, min, max, sqrt, sin, cos.
 ---
 
-## Browse Libraries
+## Core Libraries
 
 | Library | Description | |
 |---------|-------------|-|
-| [**dart:core**](/api/dart-core/) | Fundamental types - num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration | [Browse ->](/api/dart-core/) |
-| [**dart:async**](/api/dart-async/) | Asynchronous programming - Future, Stream, Completer, Timer, Zone | [Browse ->](/api/dart-async/) |
-| [**dart:collection**](/api/dart-collection/) | Specialized collections - HashMap, LinkedList, Queue, SplayTreeMap | [Browse ->](/api/dart-collection/) |
-| [**dart:convert**](/api/dart-convert/) | Encoders and decoders - JSON, UTF-8, Base64, Latin-1, custom codecs | [Browse ->](/api/dart-convert/) |
-| [**dart:io**](/api/dart-io/) | I/O for servers and CLI - File, Directory, HttpClient, Socket, Process | [Browse ->](/api/dart-io/) |
-| [**dart:math**](/api/dart-math/) | Math constants and functions - Random, Point, Rectangle, min, max, sqrt | [Browse ->](/api/dart-math/) |
-| [**dart:typed_data**](/api/dart-typed_data/) | Efficient binary data - ByteBuffer, Uint8List, Float64List | [Browse ->](/api/dart-typed_data/) |
-| [**dart:developer**](/api/dart-developer/) | Debugging and profiling - Timeline, debugger, ServiceExtension | [Browse ->](/api/dart-developer/) |
+| [**dart:core**](/api/dart-core/library) | Fundamental types - num, String, List, Map, Set, Iterable, RegExp, DateTime, Duration | [Browse dart:core ->](/api/dart-core/library) |
+| [**dart:async**](/api/dart-async/library) | Asynchronous programming - Future, Stream, Completer, Timer, Zone, scheduleMicrotask | [Browse dart:async ->](/api/dart-async/library) |
+| [**dart:collection**](/api/dart-collection/library) | Specialized collections - HashMap, LinkedList, Queue, SplayTreeMap, UnmodifiableListView | [Browse dart:collection ->](/api/dart-collection/library) |
+| [**dart:convert**](/api/dart-convert/library) | Encoders and decoders - JSON, UTF-8, Base64, Latin-1, and custom codecs | [Browse dart:convert ->](/api/dart-convert/library) |
+| [**dart:math**](/api/dart-math/library) | Mathematical constants and functions - Random, Point, Rectangle, min, max, sqrt, sin, cos | [Browse dart:math ->](/api/dart-math/library) |
+| [**dart:typed_data**](/api/dart-typed_data/library) | Efficient binary data - ByteBuffer, Uint8List, Float64List, Int32List | [Browse dart:typed_data ->](/api/dart-typed_data/library) |
+| [**dart:developer**](/api/dart-developer/library) | Debugging and profiling - Timeline, debugger, ServiceExtension | [Browse dart:developer ->](/api/dart-developer/library) |
 
-### VM Libraries
-
-| Library | Description | |
-|---------|-------------|-|
-| [**dart:io**](/api/dart-io/) | File system, HTTP, sockets, processes, platform detection | [Browse ->](/api/dart-io/) |
-| [**dart:isolate**](/api/dart-isolate/) | Concurrent programming with isolated memory spaces | [Browse ->](/api/dart-isolate/) |
-| [**dart:ffi**](/api/dart-ffi/) | Foreign function interface for calling C code | [Browse ->](/api/dart-ffi/) |
-
-### Web Libraries
+## VM Libraries
 
 | Library | Description | |
 |---------|-------------|-|
-| [**dart:js_interop**](/api/dart-js_interop/) | Type-safe JavaScript interop | [Browse ->](/api/dart-js_interop/) |
-| [**dart:html**](/api/dart-html/) | DOM manipulation, events, HTTP requests (legacy) | [Browse ->](/api/dart-html/) |
+| [**dart:io**](/api/dart-io/library) | File system, HTTP, sockets, processes, platform detection | [Browse dart:io ->](/api/dart-io/library) |
+| [**dart:isolate**](/api/dart-isolate/library) | Concurrent programming with isolated memory spaces | [Browse dart:isolate ->](/api/dart-isolate/library) |
+| [**dart:ffi**](/api/dart-ffi/library) | Foreign function interface for calling C code | [Browse dart:ffi ->](/api/dart-ffi/library) |
+
+## Web Libraries
+
+| Library | Description | |
+|---------|-------------|-|
+| [**dart:js_interop**](/api/dart-js_interop/library) | Type-safe JavaScript interop | [Browse dart:js_interop ->](/api/dart-js_interop/library) |
+| [**dart:html**](/api/dart-html/library) | DOM manipulation, events, HTTP requests (legacy) | [Browse dart:html ->](/api/dart-html/library) |
 
 ## Quick Example
 
