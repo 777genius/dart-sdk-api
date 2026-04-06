@@ -76,7 +76,11 @@ jobs:
             final List<SidebarItem> items;
             const SidebarGroup({this.title, required this.items});
           }
-          const List<SidebarGroup> guideSidebarGroups = [];
+          const List<SidebarGroup> guideSidebarGroups = [
+            SidebarGroup(items: [
+              SidebarItem(text: 'Dart SDK Guide', link: '/guide/'),
+            ]),
+          ];
           DART
 
       # dartdoc_modern generates web/guide/<name>.html with <meta http-equiv="refresh">.
