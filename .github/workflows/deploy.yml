@@ -63,6 +63,12 @@ jobs:
         run: |
           cp docs-site-overrides/docs_home_layout.dart docs-site/lib/layouts/docs_home_layout.dart 2>/dev/null || true
 
+      # Use Dart logo as favicon (also shown in header)
+      - name: Replace favicon with Dart logo
+        run: |
+          cp docs-site-overrides/dart-logo.svg docs-site/web/favicon.svg
+          cp docs-site-overrides/dart-logo.svg docs-site/web/dart-logo.svg
+
       # --sdk-docs doesn't generate guides, but app.dart imports guide_sidebar.dart.
       # Create an empty stub so jaspr build compiles.
       - name: Create guide sidebar stub
